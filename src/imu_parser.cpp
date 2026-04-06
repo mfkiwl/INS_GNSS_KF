@@ -2,6 +2,7 @@
 #include <linux/i2c-dev.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <cstdint>
 #include <time.h>
 #include "imu_parser.hpp"
 

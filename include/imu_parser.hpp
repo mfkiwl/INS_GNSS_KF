@@ -1,5 +1,6 @@
 #pragma once
 #include <time.h>
+#include <cstdint>
 
 struct IMU_data {
     double wx, wy, wz;
