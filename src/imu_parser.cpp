@@ -14,7 +14,7 @@ IMU_data IMU_parser::read() {
     ioctl(fd, I2C_SLAVE, gyro);
     reg = 0x1D;
     write(fd, &reg, 1);
-    read(fd, buf, 6);
+    ::read(fd, buf, 6);
     int16_t raw_wx = (buf[0] << 8) | buf[1];
     int16_t raw_wy = (buf[2] << 8) | buf[3];
     int16_t raw_wz = (buf[4] << 8) | buf[5];
@@ -25,7 +25,7 @@ IMU_data IMU_parser::read() {
     ioctl(fd, I2C_SLAVE, accel);
     reg = 0x32;
     write(fd, &reg, 1);
-    read(fd, buf, 6);
+    ::read(fd, buf, 6);
     int16_t raw_ax = (buf[0] << 8) | buf[1];
     int16_t raw_ay = (buf[2] << 8) | buf[3];
     int16_t raw_az = (buf[4] << 8) | buf[5];
@@ -36,7 +36,7 @@ IMU_data IMU_parser::read() {
     ioctl(fd, I2C_SLAVE, mag);
     reg = 0x03;
     write(fd, &reg, 1);
-    read(fd, buf, 6);
+    ::read(fd, buf, 6);
     int16_t raw_mx = (buf[0] << 8) | buf[1];
     int16_t raw_my = (buf[2] << 8) | buf[3];
     int16_t raw_mz = (buf[4] << 8) | buf[5];
